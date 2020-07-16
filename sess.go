@@ -196,6 +196,11 @@ func newUDPSession(conv uint32, dataShards, parityShards int, l *Listener, conn 
 	return sess
 }
 
+
+func (s *UDPSession) UDPConn() *net.UDPConn  {
+	return s.conn.(*net.UDPConn)
+}
+
 // Read implements net.Conn
 func (s *UDPSession) Read(b []byte) (n int, err error) {
 	for {
