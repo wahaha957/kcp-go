@@ -606,6 +606,10 @@ func (s *UDPSession) update() {
 	}
 }
 
+func (s *UDPSession) UDPConn() *net.UDPConn {
+	return conn.(*net.UDPConn)
+}
+
 // GetConv gets conversation id of a session
 func (s *UDPSession) GetConv() uint32 { return s.kcp.conv }
 
